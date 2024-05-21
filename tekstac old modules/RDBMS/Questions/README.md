@@ -37,7 +37,7 @@ CREATE TABLE employee (
 
 ALTER TABLE employee
 ADD CONSTRAINT id_primary_key PRIMARY KEY (id1, id2, id3);
-```
+``` 
 
 #### 💻 4. How to change data type of existing column in table
 
@@ -50,4 +50,17 @@ CREATE TABLE employee (
 
 ALTER TABLE employee
 MODIFY id3 VARCHAR(30);
+```
+
+#### 💻 Delete entire column in existing table 
+
+```sql
+CREATE TABLE employee (
+	id1 INT,
+    id2 INT,
+    id3 INT
+);
+
+ALTER TABLE employee
+DROP COLUMN id3;
 ```

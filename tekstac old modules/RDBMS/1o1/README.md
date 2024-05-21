@@ -6,6 +6,9 @@
 | 2. | [Relational Database](#⭐-relational-database) |
 | 3. | [SQL vs NoSQL](#⭐-sql-vs-nosql)
 | 4. | [SQL Keywords](#⭐-sql-keywords)
+| 5. | [Datatypes](#⭐-datatypes)
+| 6. | [Operators](#⭐-operators)
+| 7. | [SELECT](#⭐-select) |
 
 ## ⭐ Introduction
 
@@ -250,3 +253,173 @@ Limitations of NoSQL databases:
 [🔝 Back to top](#📍-overview)
 
 ---
+
+## ⭐ Datatypes
+
+MySQL supports a variety of data types categorized into several groups: Numeric, Date and Time, String (or Text), Spatial, and JSON data types. Here’s a comprehensive list of MySQL data types:
+
+### Numeric Data Types
+
+#### Integer Types
+- **TINYINT**: A very small integer. Range: -128 to 127 or 0 to 255 (unsigned).
+- **SMALLINT**: A small integer. Range: -32,768 to 32,767 or 0 to 65,535 (unsigned).
+- **MEDIUMINT**: A medium-sized integer. Range: -8,388,608 to 8,388,607 or 0 to 16,777,215 (unsigned).
+- **INT** or **INTEGER**: A standard integer. Range: -2,147,483,648 to 2,147,483,647 or 0 to 4,294,967,295 (unsigned).
+- **BIGINT**: A large integer. Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 or 0 to 18,446,744,073,709,551,615 (unsigned).
+
+#### Floating-Point Types
+- **FLOAT**: A floating-point number. Typically used for approximate values.
+- **DOUBLE**: A double-precision floating-point number. Also used for approximate values.
+
+#### Fixed-Point Types
+- **DECIMAL** or **NUMERIC**: A fixed-point number. Used for exact values, typically for monetary data.
+
+### Date and Time Data Types
+- **DATE**: A date value in 'YYYY-MM-DD' format.
+- **TIME**: A time value in 'HH:MM:SS' format.
+- **DATETIME**: A date and time combination in 'YYYY-MM-DD HH:MM:SS' format.
+- **TIMESTAMP**: A timestamp value. 'YYYY-MM-DD HH:MM:SS' format, auto-updates.
+- **YEAR**: A year value in 'YYYY' format.
+
+### String Data Types
+- **CHAR**: A fixed-length string. Maximum length of 255 characters.
+- **VARCHAR**: A variable-length string. Maximum length of 65,535 characters.
+- **BINARY**: A fixed-length binary string.
+- **VARBINARY**: A variable-length binary string.
+- **TEXT**: A large text field. Maximum length of 65,535 characters.
+- **TINYTEXT**: A very small text field. Maximum length of 255 characters.
+- **MEDIUMTEXT**: A medium-sized text field. Maximum length of 16,777,215 characters.
+- **LONGTEXT**: A very large text field. Maximum length of 4,294,967,295 characters.
+- **BLOB**: A binary large object that can hold a variable amount of data. Similar to TEXT types but for binary data.
+- **TINYBLOB**: A very small BLOB. Maximum length of 255 bytes.
+- **MEDIUMBLOB**: A medium-sized BLOB. Maximum length of 16,777,215 bytes.
+- **LONGBLOB**: A large BLOB. Maximum length of 4,294,967,295 bytes.
+- **ENUM**: An enumeration. A string object with a value chosen from a list of permitted values.
+- **SET**: A set. A string object that can have zero or more values, each chosen from a list of permitted values.
+
+### Spatial Data Types
+- **GEOMETRY**: A type that can store geometry values of any type.
+- **POINT**: A point in 2D space.
+- **LINESTRING**: A line string in 2D space.
+- **POLYGON**: A polygon in 2D space.
+- **MULTIPOINT**: A collection of points.
+- **MULTILINESTRING**: A collection of line strings.
+- **MULTIPOLYGON**: A collection of polygons.
+- **GEOMETRYCOLLECTION**: A collection of geometry objects.
+
+### JSON Data Type
+- **JSON**: Stores JSON (JavaScript Object Notation) data.
+
+
+
+[🔝 Back to top](#📍-overview)
+
+---
+
+## ⭐ Operators
+
+In MySQL, operators are used to specify conditions in SQL statements, perform arithmetic operations, compare values, and manipulate strings. Below is a list of commonly used operators in MySQL, categorized for easier understanding:
+
+### Arithmetic Operators
+These operators are used to perform mathematical operations.
+
+| Operator | Description      | Example              |
+|----------|------------------|----------------------|
+| `+`      | Addition         | `SELECT 5 + 3;`      |
+| `-`      | Subtraction      | `SELECT 5 - 3;`      |
+| `*`      | Multiplication   | `SELECT 5 * 3;`      |
+| `/`      | Division         | `SELECT 6 / 3;`      |
+| `%`      | Modulus          | `SELECT 5 % 3;`      |
+
+### Comparison Operators
+These operators are used to compare two values.
+
+| Operator | Description               | Example                  |
+|----------|---------------------------|--------------------------|
+| `=`      | Equal to                  | `SELECT * FROM users WHERE age = 30;` |
+| `!=`     | Not equal to              | `SELECT * FROM users WHERE age != 30;` |
+| `<>`     | Not equal to (alternate)  | `SELECT * FROM users WHERE age <> 30;` |
+| `>`      | Greater than              | `SELECT * FROM users WHERE age > 30;` |
+| `<`      | Less than                 | `SELECT * FROM users WHERE age < 30;` |
+| `>=`     | Greater than or equal to  | `SELECT * FROM users WHERE age >= 30;` |
+| `<=`     | Less than or equal to     | `SELECT * FROM users WHERE age <= 30;` |
+| `BETWEEN`| Between a range           | `SELECT * FROM users WHERE age BETWEEN 20 AND 30;` |
+| `IN`     | Match any value in a list | `SELECT * FROM users WHERE age IN (20, 25, 30);` |
+| `LIKE`   | Search for a pattern      | `SELECT * FROM users WHERE name LIKE 'J%';` |
+| `IS NULL`| Check for NULL value      | `SELECT * FROM users WHERE age IS NULL;` |
+
+### Logical Operators
+These operators are used to combine multiple conditions.
+
+| Operator | Description               | Example                          |
+|----------|---------------------------|----------------------------------|
+| `AND`    | True if both conditions are true | `SELECT * FROM users WHERE age > 25 AND city = 'New York';` |
+| `OR`     | True if any condition is true    | `SELECT * FROM users WHERE age > 25 OR city = 'New York';`  |
+| `NOT`    | Reverses the condition's result | `SELECT * FROM users WHERE NOT age > 25;`                   |
+
+### Bitwise Operators
+These operators are used to perform bit-level operations.
+
+| Operator | Description              | Example                |
+|----------|--------------------------|------------------------|
+| `&`      | Bitwise AND              | `SELECT 5 & 3;`        |
+| `|`      | Bitwise OR               | `SELECT 5 | 3;`        |
+| `^`      | Bitwise XOR              | `SELECT 5 ^ 3;`        |
+| `~`      | Bitwise NOT              | `SELECT ~5;`           |
+| `<<`     | Bitwise left shift       | `SELECT 5 << 1;`       |
+| `>>`     | Bitwise right shift      | `SELECT 5 >> 1;`       |
+
+### String Operators
+These operators are used for string manipulation.
+
+| Operator | Description              | Example                             |
+|----------|--------------------------|-------------------------------------|
+| `CONCAT` | Concatenates two or more strings | `SELECT CONCAT('Hello', ' World');` |
+| `LENGTH` | Returns the length of a string  | `SELECT LENGTH('Hello');`            |
+| `LOWER`  | Converts a string to lower case | `SELECT LOWER('Hello');`             |
+| `UPPER`  | Converts a string to upper case | `SELECT UPPER('Hello');`             |
+| `SUBSTRING` | Extracts a substring        | `SELECT SUBSTRING('Hello', 1, 2);`   |
+| `REPLACE` | Replaces occurrences of a substring | `SELECT REPLACE('Hello World', 'World', 'MySQL');` |
+
+### Assignment Operators
+These operators are used to assign values to variables.
+
+| Operator | Description              | Example                    |
+|----------|--------------------------|----------------------------|
+| `=`      | Assign a value           | `SET @a = 5;`              |
+| `:=`     | Assign a value (alternate)| `SET @a := 5;`             |
+
+[🔝 Back to top](#📍-overview)
+
+---
+
+## ⭐ 7. `SELECT`
+
+The `SELECT` statement is used in SQL to pick out specific data from a database. In other words, it is used to select from the database what you would like to display. The syntax for the `SELECT` statement is fairly straightforward:
+
+```sql
+SELECT column(s)
+FROM table
+WHERE condition;
+```
+
+* `column(s)`: Enter the name(s) of the column(s) that you want to display.
+
+* `table`: The name of the table from where you want to retrieve data.
+
+* `WHERE`: Optional. This is a filter to display only the rows where this condition is true.
+
+
+For instance, if you wanted to select all data from the “Customers” table, your query would look like this:
+
+```sql
+SELECT *
+FROM Customers;
+```
+
+In the above code, the asterisk `*` denotes “all”. This will retrieve all of the data in the “Customers” table.
+
+[🔝 Back to top](#📍-overview)
+
+---
+
