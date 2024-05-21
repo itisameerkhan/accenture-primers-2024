@@ -8,5 +8,5 @@ b. bundle method seperated from data
 
 c. bundle data seperated from method
 
-**d. bundle data and method**
+**`d. bundle data and method`**
 
