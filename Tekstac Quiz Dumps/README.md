@@ -10,6 +10,8 @@ c. bundle data seperated from method
 
 **`d. bundle data and method`**
 
+---
+
 #### 2. How do we change the state of an object ?
 
 Select one:
@@ -23,6 +25,8 @@ c. Using Object's default methods
 d. Using class name
 
 
+---
+
 #### 3. Select the benets of OOP ?
 
 Select one or more:
@@ -34,6 +38,8 @@ Select one or more:
 c. code deployment
 
 d. Testing
+
+---
 
 #### 4. What denes the state of an object ?
 
