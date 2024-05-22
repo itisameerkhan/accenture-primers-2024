@@ -1,4 +1,4 @@
-#### 1 .What is the approach of OO ?
+### 1 .What is the approach of OO ?
 
 Select one:
 
@@ -12,7 +12,7 @@ c. bundle data seperated from method
 
 ---
 
-#### 2. How do we change the state of an object ?
+### 2. How do we change the state of an object ?
 
 Select one:
 
@@ -27,7 +27,7 @@ d. Using class name
 
 ---
 
-#### 3. Select the benets of OOP ?
+### 3. Select the benets of OOP ?
 
 Select one or more:
 
@@ -41,7 +41,7 @@ d. Testing
 
 ---
 
-#### 4. What denes the state of an object ?
+### 4. What denes the state of an object ?
 
 Select one:
 
