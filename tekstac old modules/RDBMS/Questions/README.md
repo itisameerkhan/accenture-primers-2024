@@ -64,3 +64,36 @@ CREATE TABLE employee (
 ALTER TABLE employee
 DROP COLUMN id3;
 ```
+
+
+#### 💻 How to add date column in existing table 
+
+```sql
+ALTER TABLE Customer 
+ADD order_date DATE DEFAULT "2023-06-22";
+```
+
+---
+
+#### 💻 How to DELETE particular records in Table
+
+```sql
+DELETE FROM Customer
+WHERE customer_id = 9;
+```
+
+---
+
+#### 💻 How to remove entire column in table
+
+```sql
+ALTER TABLE Customer 
+DROP COLUMN joining_date;
+```
+
+#### 💻 How to remove entire data from table not the column
+
+```sql
+UPDATE Customer
+SET account_verified = NULL;
+```

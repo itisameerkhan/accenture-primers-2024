@@ -468,3 +468,166 @@ c. 10 50
 d. 10
 
 ---
+
+### 27. 
+
+```java
+class Account {
+    public void deposite(int amount) {
+        System.out.println("Account deposited with: " + amount);
+    }
+
+    public void transaction() {
+        this.deposite(100); // Calls the deposite method of the current instance
+    }
+}
+
+class SavingsAccount extends Account {
+    @Override
+    public void deposite(int amount) {
+        System.out.println("Savings Account deposited with: " + amount);
+    }
+}
+
+public class ApplicationTester {
+    public static void main(String[] args) {
+        Account account = new SavingsAccount();
+        account.transaction();
+    }
+}
+```
+
+Choose the most appropriate option.
+Select one:
+
+a. Account deposited with: 100
+
+b. Savings Account deposited with: 0
+
+c. `Savings Account deposited with: 100`
+
+d. Account deposited with: 0
+
+---
+
+```java
+class Employee {
+    static {
+        System.out.println("Employee static block");
+    }
+    
+    Employee() {
+        System.out.println("Employee constructor");
+    }
+}
+
+class Manager {
+    static {
+        System.out.println("Manager static block");
+    }
+    
+    Manager() {
+        System.out.println("Manager constructor");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Manager obj = null;
+    }
+}
+```
+
+
+`no output`
+
+---
+
+### 28. Identify the CORRECT SQL statement to create a table with composite primary key. Choose most appropriate option.
+Select one:
+
+`a. CREATE TABLE Account (AccountNumber Number(5),
+CustomerId Number(10), OpeningDate Date, Balance
+Number(10,2), CONSTRAINT Acc_Pkey PRIMARY KEY
+(AccountNumber,CustomerId));`
+
+b. CREATE TABLE Account (AccountNumber Number(5),
+CustomerId Number(10), OpeningDate Date, Balance
+Number(10,2), CONSTRAINT Acc_Pkey COMPOSITE PRIMARY
+KEY (AccountNumber,CustomerId));
+
+c. CREATE TABLE Account (AccountNumber Number(5)
+CONSTRAINT Acc_Pkey1 PRIMARY KEY, CustomerId
+Number(10) CONSTRAINT Acc_Pkey2 PRIMARY KEY,
+OpeningDate Date, Balance Number(10,2));
+
+---
+
+### 29. Consider the table Student(StudentId, StudentName, Email, PercentageOfMarks). Which is the CORRECT query to display the details in the ascending order (lowest to highest) of PercentageOfMarks and in the descending order of StudentId in case PercentageOfMarks is the same. Choose most appropriate option
+
+Select one:
+
+a. SELECT StudentId, StudentName, Email, PercentageOfmarks
+FROM Student ORDER BY PercentageOfMarks DESC, StudentId;
+
+b. SELECT StudentId, StudentName, Email, PercentageOfmarks
+FROM Student ORDER BY PercentageOfMarks DESC, StudentId
+DESC;
+
+c. SELECT StudentId, StudentName, Email, PercentageOfmarks
+FROM Student ORDER BY StudentId DESC, PercentageOfMarks;
+
+`d. SELECT StudentId, StudentName, Email, PercentageOfmarks
+FROM Student ORDER BY PercentageOfMarks, StudentId DESC;
+`
+
+---
+
+### 30. Consider table Customer(cid NUMBER(4), cname VARCHAR2(10)) has some records. Identify the appropriate ALTER statements (choose 2)which executes on table Customer  Note: There is no null value for any column Select one or more:
+
+
+a. `ALTER TABLE Customer MODIFY cname VARCHAR2(15)`;
+
+b. ALTER TABLE Customer ADD CONSTRAINT cust_name NOT
+NULL(cname);
+
+c. ALTER TABLE Customer MODIFY cid NUMBER(2);
+
+d. `ALTER TABLE Customer ADD dob DATE DEFAULT '30-Jun1995'`;
+
+---
+
+### 31. Consider table Students(studentId, branchid). Identify the CORRECT SQL statement to retrieve the branches which has more than 3 students. Choose most appropriate option.
+Select one:
+
+a. SELECT branchid FROM Students HAVING COUNT(*) >3;
+
+b. SELECT branchid FROM Students GROUP BY studentId
+HAVING COUNT(*) > 3;
+
+c. `SELECT branchid FROM Students GROUP BY branchid
+HAVING COUNT(*) > 3`;
+
+d. SELECT branchid FROM Students WHERE COUNT(*) >3
+GROUP BY branchid;
+
+---
+
+### 32. Consider table Project is created using the SQL statement given below
+
+```sql
+CREATE TABLE Project(
+projectid VARCHAR2(10) CONSTRAINT pkey PRIMARY KEY,
+projectname VARCHAR2(10) CONSTRAINT pnull NOT NULL,
+employeecount NUMBER(2) DEFAULT 0);
+```
+
+a. `INSERT INTO project(projectid,employeecount)
+VALUES('P3'
+,10)`;
+
+b. `INSERT INTO project(projectid,projectname) VALUES('P2','Finance')`;
+
+c. `INSERT INTO project VALUES('P1','Finance',20)`;
+
+d. INSERT INTO project VALUES('P1','Finance';)
