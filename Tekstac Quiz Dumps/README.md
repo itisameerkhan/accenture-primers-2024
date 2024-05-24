@@ -630,4 +630,4 @@ b. `INSERT INTO project(projectid,projectname) VALUES('P2','Finance')`;
 
 c. `INSERT INTO project VALUES('P1','Finance',20)`;
 
-d. INSERT INTO project VALUES('P1','Finance';)
+d. INSERT INTO project VALUES('P1','Finance');
