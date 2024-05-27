@@ -423,3 +423,101 @@ In the above code, the asterisk `*` denotes “all”. This will retrieve all of
 
 ---
 
+## ⭐ `INSERT`
+
+The `INSERT` statement in SQL is used to add new rows of data to a table in the database. There are three forms of the INSERT statement: `INSERT INTO values`, `INSERT INTO set`, and `INSERT INTO select`.
+
+### ⚡ `INSERT INTO` values
+
+```sql
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);`
+```
+
+### ⚡ `INSERT INTO` set
+
+In this form, you’re able to insert data using the `SET` keyword. Here, you specify each column you want to insert data into, and then the data for that column.
+
+```sql
+INSERT INTO table_name 
+SET column1 = value1, column2 = value2, ...;
+```
+
+### ⚡ `INSERT INTO` select
+
+The `INSERT INTO SELECT` statement is used to copy data from one table and insert it into another table. Or, to insert data into specific columns from another table.
+
+```sql
+INSERT INTO table_name1 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table_name2
+WHERE condition;
+```
+
+> [!NOTE]
+>  Be careful when inserting data into a database as SQL does not have a confirm command. So once you execute the insert statement, the records are inserted, and you can’t undo the operation.
+
+[🔝 Back to top](#📍-overview)
+
+---
+
+## ⭐ `UPDATE`
+
+The SQL `UPDATE` statement is used to modify the existing data in a database. This statement is very useful when you need to change the values assigned to specific fields in an existing row or set of rows.
+
+The general syntax for the `UPDATE` statement is as follows:
+
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+`table_name`: The name of the table where an update will be performed.
+
+`SET`: This clause specifies the column name and the new value that it should be updated to.
+
+`column1`, `column2`, ...: The column names in the table.
+
+`value1`, `value2`, ...: The new values that you want to record into the database.
+
+`WHERE`: This clause specifies the conditions that identify which row(s) to update.
+
+```sql
+UPDATE Employees
+SET Salary = 45000
+WHERE EmployeeID = 3;
+```
+
+## ⭐ `DELETE`
+
+The `DELETE` statement in SQL helps you remove existing records from a database. However, keep in mind, it is a destructive operation and may permanently erase data from your database.
+
+### ⚡ 1. Delete All Rows:
+
+The DELETE statement without a `WHERE` clause deletes all rows in a table. This operation is irreversible.
+
+Example:
+
+```SQL
+DELETE FROM table_name;
+```
+
+This SQL statement deletes all the records from table_name.
+
+### ⚡ 2. Delete Specific Rows:
+
+When combined with the `WHERE` clause, the `DELETE` SQL statement erases specific rows that meet the condition.
+
+Example:
+
+```SQL
+DELETE FROM table_name WHERE condition;
+```
+
+This instance of the `DELETE` statement deletes records from table_name the place where the given condition matches.
+
+[🔝 Back to top](#📍-overview)
+
+---
