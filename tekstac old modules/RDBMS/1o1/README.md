@@ -521,3 +521,145 @@ This instance of the `DELETE` statement deletes records from table_name the plac
 [🔝 Back to top](#📍-overview)
 
 ---
+
+## ⭐ Data Definition Language
+
+**Data Definition Language (DDL) is a subset of SQL (Structured Query Language) that is used to define and manage the structure of database objects, such as tables, indexes, and views. DDL commands are responsible for creating, modifying, and deleting database structures, and they do not manipulate the data itself.**
+
+## ⭐ `CREATE TABLE`
+
+The `CREATE TABLE` statement in SQL is a Data Definition Language (DDL) command used to create a new table in the database.
+
+#### 💻 Syntax
+
+```sql
+CREATE TABLE table_name (
+    column1 datatype constraints,
+    column2 datatype constraints,
+    ...
+);
+```
+
+#### 💻 Example
+
+```sql
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100)
+);
+```
+
+---
+
+## ⭐ `DROP TABLE`
+
+The `DROP TABLE` statement is a Data Definition Language (DDL) operation that is used to completely remove a table from the database. This operation deletes the table structure along with all the data in it, effectively removing the table from the database system.
+
+When you execute the `DROP TABLE` statement, it eliminates both the table and its data, as well as any associated indexes, constraints, and triggers. Unlike the `TRUNCATE TABLE` statement, which only removes data but keeps the table structure, `DROP TABLE` removes everything associated with the table.
+
+#### 💻 Syntax
+
+```sql
+DROP TABLE table_name
+```
+
+### 📝 Considerations
+
+* **Irreversible Action**: Unlike `DELETE` and `TRUNCATE`, once a table is dropped, the action cannot be rolled back. Therefore, it should be used with extreme caution.
+
+* **Cascading Effects**: Dropping a table that is referenced by a foreign key constraint will also drop that foreign key relationship. Similarly, any dependent objects like views, stored procedures, or functions that reference the table might be affected.
+
+* **Permissions**: Ensure you have the appropriate permissions to drop the table. Typically, this requires `DROP` privilege on the table.
+
+### 📝 Limitations
+
+* **Foreign Key Constraints**: If the table is referenced by foreign keys from other tables, dropping it might require using `CASCADE` to also drop the dependent foreign keys.
+
+* **Replication**: Tables published using transactional or merge replication should be carefully considered before dropping, as this can impact replication.
+
+* **Dependent Objects**: Dropping a table will invalidate any dependent objects such as views, stored procedures, and functions that reference the table. Ensure these are handled appropriately.
+
+---
+
+## ⭐ `TRUNCATE TABLE`
+
+`TRUNCATE TABLE` statement is used to delete all rows from a table efficiently. Unlike the DELETE statement, which removes rows one by one and generates a lot of undo logs, the `TRUNCATE TABLE` statement deallocates the data pages associated with the table, which can be much faster, especially for large tables.
+
+#### 💻 syntax
+
+```sql
+TRUNCATE TABLE table_name;
+```
+
+---
+
+## ⭐ `ALTER TABLE`
+
+In MySQL, the `ALTER TABLE` statement is used to modify an existing table structure. It allows you to add, modify, or drop columns, change data types, add or remove indexes, rename the table, and perform various other alterations. Here's a breakdown of some common uses:
+
+### ⚡  Adding a Column:
+You can use `ALTER TABLE` to add a new column to an existing table:
+```sql
+ALTER TABLE table_name
+ADD column_name datatype [constraints];
+```
+
+### ⚡ Modifying a Column:
+You can modify the attributes of an existing column:
+```sql
+ALTER TABLE table_name
+MODIFY column_name new_datatype [constraints];
+```
+
+### ⚡ Dropping a Column:
+You can remove a column from a table:
+```sql
+ALTER TABLE table_name
+DROP COLUMN column_name;
+```
+
+### ⚡Renaming a Table:
+You can rename an existing table:
+```sql
+ALTER TABLE old_table_name
+RENAME TO new_table_name;
+```
+
+### ⚡ Adding an Index:
+You can add an index to a table:
+```sql
+ALTER TABLE table_name
+ADD INDEX index_name (column_name);
+```
+
+### ⚡ Dropping an Index:
+You can remove an index from a table:
+```sql
+ALTER TABLE table_name
+DROP INDEX index_name;
+```
+
+### ⚡ Adding a Foreign Key Constraint:
+You can add a foreign key constraint to enforce referential integrity:
+```sql
+ALTER TABLE table_name
+ADD CONSTRAINT fk_constraint_name
+FOREIGN KEY (column_name)
+REFERENCES parent_table_name (parent_column_name);
+```
+
+### ⚡ Dropping a Foreign Key Constraint:
+You can remove a foreign key constraint from a table:
+```sql
+ALTER TABLE table_name
+DROP FOREIGN KEY fk_constraint_name;
+```
+
+### ⚡ Changing Column Order:
+You can change the order of columns in a table (in MySQL, this is generally a visual change and doesn't affect the actual data):
+```sql
+ALTER TABLE table_name
+MODIFY column_name datatype FIRST|AFTER other_column_name;
+```
+
