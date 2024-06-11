@@ -97,3 +97,13 @@ DROP COLUMN joining_date;
 UPDATE Customer
 SET account_verified = NULL;
 ```
+
+#### 💻 `AUTO_INCREMENT` starts from 1000 ?
+
+```sql
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100)
+) AUTO_INCREMENT=1000;
+```
