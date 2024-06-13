@@ -107,4 +107,3 @@ CREATE TABLE users (
     email VARCHAR(100)
 ) AUTO_INCREMENT=1000;
 ```
-
