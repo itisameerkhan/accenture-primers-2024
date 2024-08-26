@@ -107,3 +107,24 @@ CREATE TABLE users (
     email VARCHAR(100)
 ) AUTO_INCREMENT=1000;
 ```
+
+#### 💻 Changing Column Name 
+
+```sql
+ALTER TABLE Student 
+CHANGE student_name studentName VARCHAR(20);
+```
+
+#### 💻 rename table name 
+
+```sql
+RENAME TABLE Student TO StudentDetails;
+```
+
+#### 💻 How to add `NOT NULL` in existing table
+
+```sql
+ALTER TABLE Student 
+MODIFY COLUMN name VARCHAR(20) NOT NULL;
+```
+

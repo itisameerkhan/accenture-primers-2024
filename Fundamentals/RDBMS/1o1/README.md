@@ -663,3 +663,29 @@ ALTER TABLE table_name
 MODIFY column_name datatype FIRST|AFTER other_column_name;
 ```
 
+---
+
+## ⭐ Data Manipulation Language
+
+DML (Data Manipulation Language) in SQL is used to manage and manipulate the data stored in a database.
+
+* **`SELECT`** – Retrieves data from the database.
+
+* **`INSERT`** – Adds new records (rows) into a table.
+
+* **`UPDATE`** – Modifies existing records in a table.
+
+* **`DELETE`** – Removes records from a table.
+
+## ⭐ `SELECT`
+
+The `SELECT` statement is used to retrieve data from one or more tables in the database. 
+
+```sql
+SELECT * FROM Students
+```
+
+## ⭐ `UPDATE`
+
+The `UPDATE` statement is used to modify existing records in a table. You can update specific columns based on conditions.
+
